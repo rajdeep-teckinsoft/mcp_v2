@@ -65,6 +65,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    communication.connect_ethercat()
     ui.emergencyStopButton.clicked.connect(communication.write_data(EMERGENCY_STOP_ACTIVE))
     # ui.pushButton.clicked.connect(lambda: clicked_action())
     MainWindow.show()
