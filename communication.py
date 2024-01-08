@@ -21,5 +21,6 @@ def read_data():
 # Format: Xxxnnn => X: zone ref (A, B, C, D, E); xx: button number (1-99); nnn: value (0 to 100)
 # return value should be 6 bytes
 def write_data(data_out):
-    ret = ser.write(data_out)
+    formatted_data = data_out.encode()
+    ret = ser.write(formatted_data)
     return ret
