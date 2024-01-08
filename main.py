@@ -56,6 +56,7 @@ LASER_READY_INACTIVE = 'E02000'
 
 def clicked_action(send_data):
     communication.write_data(send_data)
+    print(send_data)
 
 
 if __name__ == "__main__":
@@ -67,6 +68,5 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     communication.connect_ethercat()
     ui.emergencyStopButton.clicked.connect(lambda: clicked_action(EMERGENCY_STOP_ACTIVE))
-    # ui.pushButton.clicked.connect(lambda: clicked_action())
     MainWindow.show()
     sys.exit(app.exec_())
