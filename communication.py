@@ -8,7 +8,7 @@ ser = serial.Serial()
 
 def connect_ethercat():
     ser.baudrate = 115200
-    ser.port = '/dev/tty/ACM0'
+    ser.port = '/dev/ttyACM0'
     ser.open()
 
 
