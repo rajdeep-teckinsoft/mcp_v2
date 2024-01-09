@@ -59,6 +59,10 @@ def clicked_action(send_data):
     print(send_data)
 
 
+def drv_clicked():
+    ui.drvButton.setChecked(True)
+
+
 if __name__ == "__main__":
     import sys
 
@@ -66,7 +70,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    communication.connect_ethercat()
-    ui.emergencyStopButton.clicked.connect(lambda: clicked_action(EMERGENCY_STOP_ACTIVE))
+    # communication.connect_ethercat()
+    ui.drvButton.clicked.connect(lambda: drv_clicked())
     MainWindow.show()
     sys.exit(app.exec_())
