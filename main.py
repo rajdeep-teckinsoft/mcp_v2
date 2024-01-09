@@ -59,10 +59,6 @@ def clicked_action(send_data):
     print(send_data)
 
 
-def drv_clicked():
-    ui.drvButton.setChecked(True)
-
-
 if __name__ == "__main__":
     import sys
 
@@ -71,6 +67,6 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     # communication.connect_ethercat()
-    ui.drvButton.clicked.connect(lambda: drv_clicked())
+    # ui.drvButton.clicked.connect(lambda: drv_clicked())
     MainWindow.show()
     sys.exit(app.exec_())
