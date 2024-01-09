@@ -234,6 +234,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -273,6 +276,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -340,6 +346,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -406,6 +415,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -445,6 +457,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -499,6 +514,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -538,6 +556,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -579,6 +600,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -618,6 +642,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -659,6 +686,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -699,6 +729,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -738,6 +771,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -824,6 +860,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -863,6 +902,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -917,6 +959,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -956,6 +1001,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -1107,6 +1155,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1146,6 +1197,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -1187,6 +1241,9 @@
            <height>120</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1226,6 +1283,9 @@
            <width>120</width>
            <height>120</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -1312,6 +1372,9 @@
            <height>130</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1377,6 +1440,9 @@
            <width>130</width>
            <height>130</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
