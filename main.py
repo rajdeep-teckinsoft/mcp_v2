@@ -66,11 +66,8 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-
-    # MainWindow.setWindowFlags(Qt.FramelessWindowHint)
-    win_width = MainWindow.width()
-    win_height = (720/1920)*win_width
-    MainWindow.setFixedHeight(int(win_height))
+    MainWindow.setWindowFlags(Qt.FramelessWindowHint)
+    MainWindow.showFullScreen()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 
