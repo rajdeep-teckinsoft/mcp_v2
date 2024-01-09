@@ -73,6 +73,15 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
 
     # set up momentary push buttons as by default push buttons have latching action
+    # set up push button enablement logic
+    if ui.jogButton.isChecked():
+        ui.xButton.setEnabled(True)
+        ui.yButton.setEnabled(True)
+        ui.zButton.setEnabled(True)
+    else:
+        ui.xButton.setEnabled(False)
+        ui.yButton.setEnabled(False)
+        ui.zButton.setEnabled(False)
 
     # communication.connect_ethercat()
     # ui.drvButton.clicked.connect(lambda: drv_clicked())
