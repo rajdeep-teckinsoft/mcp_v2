@@ -1,3 +1,5 @@
+from PyQt5.QtCore import Qt
+
 import communication
 from home import *
 
@@ -64,8 +66,13 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
+    # MainWindow.setWindowFlags(Qt.FramelessWindowHint)
+    win_width = MainWindow.width()
+    # win_height = (720/1920)*win_width
+    MainWindow.heightForWidth(win_width)
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+
     # communication.connect_ethercat()
     # ui.drvButton.clicked.connect(lambda: drv_clicked())
     MainWindow.show()
