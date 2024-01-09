@@ -68,6 +68,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     MainWindow.setWindowFlags(Qt.FramelessWindowHint)
     MainWindow.showFullScreen()
+    # Press Alt+F4 to close the window
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 
