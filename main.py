@@ -72,6 +72,8 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 
+    # set up momentary push buttons as by default push buttons have latching action
+
     # communication.connect_ethercat()
     # ui.drvButton.clicked.connect(lambda: drv_clicked())
     MainWindow.show()
