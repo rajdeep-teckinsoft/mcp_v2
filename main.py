@@ -72,17 +72,92 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 
+    def auto_enablement():
+        ui.jogButton.setChecked(False)
+        ui.mdiButton.setChecked(False)
+        jog_enablement()
+        x_jog_movement_enablement()
+        y_jog_movement_enablement()
+        z_jog_movement_enablement()
+
+    def mdi_enablement():
+        ui.jogButton.setChecked(False)
+        ui.autoButton.setChecked(False)
+        jog_enablement()
+        x_jog_movement_enablement()
+        y_jog_movement_enablement()
+        z_jog_movement_enablement()
+
+    def jog_enablement():
+        if ui.jogButton.isChecked():
+            ui.xButton.setEnabled(True)
+            ui.yButton.setEnabled(True)
+            ui.zButton.setEnabled(True)
+            ui.mdiButton.setChecked(False)
+            ui.autoButton.setChecked(False)
+        else:
+            ui.xButton.setChecked(False)
+            ui.yButton.setChecked(False)
+            ui.zButton.setChecked(False)
+            ui.xButton.setEnabled(False)
+            ui.yButton.setEnabled(False)
+            ui.zButton.setEnabled(False)
+            ui.plusButton.setEnabled(False)
+            ui.vvvButton.setChecked(False)
+            ui.vvvButton.setEnabled(False)
+            ui.minusButton.setEnabled(False)
+
+    def x_jog_movement_enablement():
+        if ui.xButton.isChecked():
+            ui.plusButton.setEnabled(True)
+            ui.vvvButton.setEnabled(True)
+            ui.minusButton.setEnabled(True)
+            ui.yButton.setChecked(False)
+            ui.zButton.setChecked(False)
+        else:
+            ui.plusButton.setEnabled(False)
+            ui.vvvButton.setChecked(False)
+            ui.vvvButton.setEnabled(False)
+            ui.minusButton.setEnabled(False)
+
+    def y_jog_movement_enablement():
+        if ui.yButton.isChecked():
+            ui.plusButton.setEnabled(True)
+            ui.vvvButton.setEnabled(True)
+            ui.minusButton.setEnabled(True)
+            ui.xButton.setChecked(False)
+            ui.zButton.setChecked(False)
+        else:
+            ui.plusButton.setEnabled(False)
+            ui.vvvButton.setChecked(False)
+            ui.vvvButton.setEnabled(False)
+            ui.minusButton.setEnabled(False)
+
+    def z_jog_movement_enablement():
+        if ui.zButton.isChecked():
+            ui.plusButton.setEnabled(True)
+            ui.vvvButton.setEnabled(True)
+            ui.minusButton.setEnabled(True)
+            ui.yButton.setChecked(False)
+            ui.xButton.setChecked(False)
+        else:
+            ui.plusButton.setEnabled(False)
+            ui.vvvButton.setChecked(False)
+            ui.vvvButton.setEnabled(False)
+            ui.minusButton.setEnabled(False)
+
     # set up momentary push buttons as by default push buttons have latching action
     # set up push button enablement logic
-    if ui.jogButton.isChecked():
-        ui.xButton.setEnabled(True)
-        ui.yButton.setEnabled(True)
-        ui.zButton.setEnabled(True)
-    else:
-        ui.xButton.setEnabled(False)
-        ui.yButton.setEnabled(False)
-        ui.zButton.setEnabled(False)
-
+    jog_enablement()
+    x_jog_movement_enablement()
+    y_jog_movement_enablement()
+    z_jog_movement_enablement()
+    ui.jogButton.clicked.connect(lambda: jog_enablement())
+    ui.xButton.clicked.connect(lambda: x_jog_movement_enablement())
+    ui.yButton.clicked.connect(lambda: y_jog_movement_enablement())
+    ui.zButton.clicked.connect(lambda: z_jog_movement_enablement())
+    ui.mdiButton.clicked.connect(lambda: mdi_enablement())
+    ui.autoButton.clicked.connect(lambda: auto_enablement())
     # communication.connect_ethercat()
     # ui.drvButton.clicked.connect(lambda: drv_clicked())
     MainWindow.show()
