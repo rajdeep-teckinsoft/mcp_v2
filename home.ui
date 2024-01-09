@@ -39,6 +39,9 @@
   <property name="windowTitle">
    <string>Machine Control Panel</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -235,7 +238,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -278,7 +281,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -347,7 +350,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -416,7 +419,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -459,7 +462,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -515,7 +518,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -558,7 +561,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -601,7 +604,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -644,7 +647,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -687,7 +690,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -730,7 +733,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -773,7 +776,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -861,7 +864,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -904,7 +907,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -960,7 +963,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1003,7 +1006,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1156,7 +1159,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1199,7 +1202,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1242,7 +1245,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1285,7 +1288,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1373,7 +1376,7 @@
           </size>
          </property>
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="text">
           <string/>
@@ -1443,6 +1446,9 @@
          </property>
          <property name="autoFillBackground">
           <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <property name="text">
           <string/>
