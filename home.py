@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
         self.progressBar.setMinimumSize(QtCore.QSize(300, 40))
         self.progressBar.setMaximumSize(QtCore.QSize(300, 40))
         self.progressBar.setStyleSheet("color: rgb(0, 140, 21);")
-        self.progressBar.setProperty("value", 10)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setTextVisible(True)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout.addWidget(self.progressBar)
