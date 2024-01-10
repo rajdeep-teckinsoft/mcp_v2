@@ -1,4 +1,5 @@
 import serial
+from serial import SerialException
 
 ser = serial.Serial()
 
@@ -9,7 +10,11 @@ ser = serial.Serial()
 def connect_ethercat():
     ser.baudrate = 115200
     ser.port = '/dev/ttyACM0'
-    ser.open()
+    try:
+        ser.open()
+        return True
+    except SerialException:
+        return False
 
 
 # Format: XXXnnn => XXX: data ref; nnn: data value; 6 bytes of data
