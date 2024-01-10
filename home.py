@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         font.setItalic(True)
         font.setWeight(75)
         self.label.setFont(font)
-        self.label.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(200, 200, 200, 255), stop:1 rgba(0, 140, 21, 255));")
+        self.label.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(250, 250, 250, 255), stop:1 rgba(0, 140, 21, 255));")
         self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
