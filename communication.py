@@ -17,15 +17,13 @@ def connect_ethercat():
         return False
 
 
-# Format: XXXnnn => XXX: data ref; nnn: data value; 6 bytes of data
 def read_data():
-    data_in = ser.read(6)
+    data_in = ser.read(1)
     return data_in
 
 
-# Format: Xxxnnn => X: zone ref (A, B, C, D, E); xx: button number (1-99); nnn: value (0 to 100)
-# return value should be 6 bytes
 def write_data(data_out):
-    formatted_data = data_out.encode()
-    ret = ser.write(formatted_data)
+    # formatted_data = data_out.encode()
+    # ret = ser.write(formatted_data)
+    ret = ser.write(data_out)
     return ret

@@ -3,52 +3,67 @@ from PyQt5.QtCore import Qt
 import communication
 from home import *
 
-CYCLE_START_ACTIVE = 'A01001'
-CYCLE_START_INACTIVE = 'A01000'
-CYCLE_STOP_ACTIVE = 'A02001'
-CYCLE_STOP_INACTIVE = 'A02000'
-DRV_ACTIVE = 'B01001'
-DRV_INACTIVE = 'B01000'
-Z_LOCK_ACTIVE = 'B02001'
-Z_LOCK_INACTIVE = 'B02000'
-DRY_RUN_ACTIVE = 'B03001'
-DRY_RUN_INACTIVE = 'B03000'
-JOG_ACTIVE = 'B04001'
-JOG_INACTIVE = 'B04000'
-MDI_ACTIVE = 'B05001'
-MDI_INACTIVE = 'B05000'
-AUTO_ACTIVE = 'B06001'
-AUTO_INACTIVE = 'B06000'
-X_ACTIVE = 'B07001'
-X_INACTIVE = 'B07000'
-Y_ACTIVE = 'B08001'
-Y_INACTIVE = 'B08000'
-Z_ACTIVE = 'B09001'
-Z_INACTIVE = 'B09000'
-PLUS_ACTIVE = 'B10001'
-PLUS_INACTIVE = 'B10000'
-VVV_ACTIVE = 'B11001'
-VVV_INACTIVE = 'B11000'
-MINUS_ACTIVE = 'B12001'
-MINUS_INACTIVE = 'B12000'
-NC_REF_ACTIVE = 'C01001'
-NC_REF_INACTIVE = 'C01000'
-NC_OFF_ACTIVE = 'C02001'
-NC_OFF_INACTIVE = 'C02000'
-RET_FOR_ACTIVE = 'C03001'
-RET_FOR_INACTIVE = 'C03000'
-RET_REV_ACTIVE = 'C04001'
-RET_REV_INACTIVE = 'C04000'
-PRC_END_ACTIVE = 'D01001'
-PRC_END_INACTIVE = 'D01000'
-ALM_OVR_ACTIVE = 'D02001'
-ALM_OVR_INACTIVE = 'D02000'
-ALM_RST_ACTIVE = 'D03001'
-ALM_RST_INACTIVE = 'D03000'
-LOCK_RST_ACTIVE = 'D04001'
-LOCK_RST_INACTIVE = 'D04000'
-LASER_ON_ACTIVE = 'E01001'
-LASER_ON_INACTIVE = 'E01000'
+# 1st column of keys
+CYCLE_START_ACTIVE = 1
+CYCLE_START_INACTIVE = 2
+
+# 2nd column of keys
+CYCLE_STOP_ACTIVE = 3
+CYCLE_STOP_INACTIVE = 4
+
+# 3rd column of keys
+DRV_ACTIVE = 5
+DRV_INACTIVE = 6
+JOG_ACTIVE = 7
+JOG_INACTIVE = 8
+X_ACTIVE = 9
+X_INACTIVE = 10
+PLUS_ACTIVE = 11
+PLUS_INACTIVE = 12
+
+# 4th column of keys
+Z_LOCK_ACTIVE = 13
+Z_LOCK_INACTIVE = 14
+MDI_ACTIVE = 15
+MDI_INACTIVE = 16
+Y_ACTIVE = 17
+Y_INACTIVE = 18
+VVV_ACTIVE = 19
+VVV_INACTIVE = 20
+
+# 5th column of keys
+DRY_RUN_ACTIVE = 21
+DRY_RUN_INACTIVE = 22
+AUTO_ACTIVE = 23
+AUTO_INACTIVE = 24
+Z_ACTIVE = 25
+Z_INACTIVE = 26
+MINUS_ACTIVE = 27
+MINUS_INACTIVE = 28
+
+# 6th column of keys
+NC_REF_ACTIVE = 29
+NC_REF_INACTIVE = 30
+NC_OFF_ACTIVE = 31
+NC_OFF_INACTIVE = 32
+RET_FOR_ACTIVE = 33
+RET_FOR_INACTIVE = 34
+RET_REV_ACTIVE = 35
+RET_REV_INACTIVE = 36
+
+# 7th column of keys
+PRC_END_ACTIVE = 37
+PRC_END_INACTIVE = 38
+ALM_OVR_ACTIVE = 39
+ALM_OVR_INACTIVE = 40
+ALM_RST_ACTIVE = 41
+ALM_RST_INACTIVE = 42
+LOCK_RST_ACTIVE = 43
+LOCK_RST_INACTIVE = 44
+
+# 8th column of keys
+LASER_ON_ACTIVE = 45
+LASER_ON_INACTIVE = 46
 
 serial_connected = False
 
@@ -56,7 +71,8 @@ serial_connected = False
 def clicked_action(send_data):
     if serial_connected:
         communication.write_data(send_data)
-    print(send_data)
+    # if __debug__:
+        # print(send_data)
 
 
 if __name__ == "__main__":
@@ -159,10 +175,11 @@ if __name__ == "__main__":
 
     # set up push button functions---------------------------------------
     serial_connected = communication.connect_ethercat()
-    if serial_connected:
-        print("Serial is connected")
-    else:
-        print("Serial is not connected. Please check!")
+    if __debug__:
+        if serial_connected:
+            print("Serial is connected")
+        else:
+            print("Serial is not connected. Please check!")
 
     def cycle_start_function():
         clicked_action(CYCLE_START_ACTIVE)
