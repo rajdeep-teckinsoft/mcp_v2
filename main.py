@@ -2,6 +2,9 @@ from PyQt5.QtCore import Qt
 
 import communication
 from home import *
+from time import sleep
+
+MOMENTARY_SWITCH_ON_TIME_SEC = 0.2
 
 # 1st column of keys
 CYCLE_START_ACTIVE = 1
@@ -71,8 +74,8 @@ serial_connected = False
 def clicked_action(send_data):
     if serial_connected:
         communication.write_data(send_data)
-    # if __debug__:
-        # print(send_data)
+    if __debug__:
+        print(send_data)
 
 
 if __name__ == "__main__":
@@ -183,9 +186,13 @@ if __name__ == "__main__":
 
     def cycle_start_function():
         clicked_action(CYCLE_START_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(CYCLE_START_INACTIVE)
 
     def cycle_stop_function():
         clicked_action(CYCLE_STOP_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(CYCLE_STOP_INACTIVE)
 
     def drv_function():
         if ui.drvButton.isChecked():
@@ -243,9 +250,13 @@ if __name__ == "__main__":
 
     def plus_jog_function():
         clicked_action(PLUS_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(PLUS_INACTIVE)
 
     def minus_jog_function():
         clicked_action(MINUS_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(MINUS_INACTIVE)
 
     def vvv_jog_function():
         if ui.vvvButton.isChecked():
@@ -267,21 +278,33 @@ if __name__ == "__main__":
 
     def ret_for_function():
         clicked_action(RET_FOR_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(RET_FOR_INACTIVE)
 
     def ret_rev_function():
         clicked_action(RET_REV_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(RET_REV_INACTIVE)
 
     def prc_end_function():
         clicked_action(PRC_END_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(PRC_END_INACTIVE)
 
     def alm_ovr_function():
         clicked_action(ALM_OVR_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(ALM_OVR_INACTIVE)
 
     def alm_rst_function():
         clicked_action(ALM_RST_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(ALM_RST_INACTIVE)
 
     def lock_rst_function():
         clicked_action(LOCK_RST_ACTIVE)
+        sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
+        clicked_action(LOCK_RST_INACTIVE)
 
     def laser_on_function():
         if ui.laserOnButton.isChecked():
