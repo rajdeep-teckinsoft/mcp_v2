@@ -4,7 +4,7 @@ import communication
 from home import *
 from time import sleep
 
-MOMENTARY_SWITCH_ON_TIME_SEC = 2
+MOMENTARY_SWITCH_ON_TIME_SEC = 0.5
 
 # 1st column of keys
 CYCLE_START_ACTIVE = '1'
