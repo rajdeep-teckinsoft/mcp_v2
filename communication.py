@@ -25,5 +25,4 @@ def read_data():
 def write_data(data_out):
     formatted_data = data_out.encode()
     ret = ser.write(formatted_data)
-    # ret = ser.write(data_out)
     return ret
