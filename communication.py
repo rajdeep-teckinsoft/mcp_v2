@@ -6,6 +6,15 @@ ser = serial.Serial()
 
 # to list ports run the following command in shell
 # python3 -m serial.tools.list_ports
+def connect_ethercat0():
+    ser.baudrate = 115200
+    ser.port = '/dev/ttyACM0'
+    try:
+        ser.open()
+        return True
+    except SerialException:
+        return False
+
 
 def connect_ethercat1():
     ser.baudrate = 115200
@@ -14,7 +23,7 @@ def connect_ethercat1():
         ser.open()
         return True
     except SerialException:
-        connect_ethercat2()
+        return False
 
 
 def connect_ethercat2():
@@ -24,7 +33,7 @@ def connect_ethercat2():
         ser.open()
         return True
     except SerialException:
-        connect_ethercat3()
+        return False
 
 
 def connect_ethercat3():
@@ -35,16 +44,6 @@ def connect_ethercat3():
         return True
     except SerialException:
         return False
-
-
-def connect_ethercat():
-    ser.baudrate = 115200
-    ser.port = '/dev/ttyACM0'
-    try:
-        ser.open()
-        return True
-    except SerialException:
-        connect_ethercat1()
 
 
 def read_data():

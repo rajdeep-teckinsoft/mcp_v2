@@ -74,8 +74,7 @@ serial_connected = False
 def clicked_action(send_data):
     if serial_connected:
         communication.write_data(send_data)
-    if __debug__:
-        print(send_data)
+    print(send_data)
 
 
 if __name__ == "__main__":
@@ -177,13 +176,24 @@ if __name__ == "__main__":
     ui.autoButton.clicked.connect(lambda: auto_ui_logic())
 
     # set up push button functions---------------------------------------
-    serial_connected = communication.connect_ethercat()
-    if __debug__:
+    serial_connected = communication.connect_ethercat0()
+    if serial_connected:
+        print("Serial is connected")
+    else:
+        serial_connected = communication.connect_ethercat1()
         if serial_connected:
             print("Serial is connected")
         else:
-            ui.proteck_logo.setStyleSheet("background-color: red")
-            print("Serial is not connected. Please check!")
+            serial_connected = communication.connect_ethercat2()
+            if serial_connected:
+                print("Serial is connected")
+            else:
+                serial_connected = communication.connect_ethercat3()
+                if serial_connected:
+                    print("Serial is connected")
+                else:
+                    ui.proteck_logo.setStyleSheet("background-color: red")
+                    print("Serial is not connected. Please check!")
 
     def cycle_start_function():
         clicked_action(CYCLE_START_ACTIVE)
