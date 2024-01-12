@@ -15,7 +15,6 @@ def connect_ethercat1():
         return True
     except SerialException:
         connect_ethercat2()
-        return False
 
 
 def connect_ethercat2():
@@ -26,7 +25,6 @@ def connect_ethercat2():
         return True
     except SerialException:
         connect_ethercat3()
-        return False
 
 
 def connect_ethercat3():
@@ -47,7 +45,6 @@ def connect_ethercat():
         return True
     except SerialException:
         connect_ethercat1()
-        return False
 
 
 def read_data():
