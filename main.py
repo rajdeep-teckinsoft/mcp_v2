@@ -182,6 +182,7 @@ if __name__ == "__main__":
         if serial_connected:
             print("Serial is connected")
         else:
+            ui.proteck_logo.setStyleSheet("background-color: red")
             print("Serial is not connected. Please check!")
 
     def cycle_start_function():
