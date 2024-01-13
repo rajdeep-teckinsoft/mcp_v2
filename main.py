@@ -346,7 +346,7 @@ if __name__ == "__main__":
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(LOCK_RST_INACTIVE)
 
-
+    """
     def laser_status_check():
         clicked_action(LASER_STATUS_CHECK)
         received = communication.read_data()
@@ -358,15 +358,15 @@ if __name__ == "__main__":
 
     laserTimer = QTimer()
     laserTimer.timeout.connect(lambda: laser_status_check())
-
+    """
 
     def laser_on_function():
         if ui.laserOnButton.isChecked():
             clicked_action(LASER_ON_ACTIVE)
-            laserTimer.start(2000)
+            # laserTimer.start(2000)
         else:
             clicked_action(LASER_ON_INACTIVE)
-            laserTimer.stop()
+            # laserTimer.stop()
 
 
     ui.cycleStartButton.clicked.connect(lambda: cycle_start_function())
