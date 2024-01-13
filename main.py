@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer
 
 import communication
 from home import *
@@ -68,6 +68,8 @@ LOCK_RST_INACTIVE = 'D44'
 LASER_ON_ACTIVE = 'D45'
 LASER_ON_INACTIVE = 'D46'
 
+LASER_STATUS_CHECK = 'S47'
+
 serial_connected = False
 
 
@@ -97,6 +99,7 @@ if __name__ == "__main__":
         y_jog_ui_logic()
         z_jog_ui_logic()
 
+
     def mdi_ui_logic():
         ui.jogButton.setChecked(False)
         ui.autoButton.setChecked(False)
@@ -104,6 +107,7 @@ if __name__ == "__main__":
         x_jog_ui_logic()
         y_jog_ui_logic()
         z_jog_ui_logic()
+
 
     def jog_ui_logic():
         if ui.jogButton.isChecked():
@@ -124,6 +128,7 @@ if __name__ == "__main__":
             ui.vvvButton.setEnabled(False)
             ui.minusButton.setEnabled(False)
 
+
     def x_jog_ui_logic():
         if ui.xButton.isChecked():
             ui.plusButton.setEnabled(True)
@@ -137,6 +142,7 @@ if __name__ == "__main__":
             ui.vvvButton.setEnabled(False)
             ui.minusButton.setEnabled(False)
 
+
     def y_jog_ui_logic():
         if ui.yButton.isChecked():
             ui.plusButton.setEnabled(True)
@@ -149,6 +155,7 @@ if __name__ == "__main__":
             ui.vvvButton.setChecked(False)
             ui.vvvButton.setEnabled(False)
             ui.minusButton.setEnabled(False)
+
 
     def z_jog_ui_logic():
         if ui.zButton.isChecked():
@@ -195,15 +202,18 @@ if __name__ == "__main__":
                     ui.proteck_logo.setStyleSheet("background-color: red")
                     print("Serial is not connected. Please check!")
 
+
     def cycle_start_function():
         clicked_action(CYCLE_START_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(CYCLE_START_INACTIVE)
 
+
     def cycle_stop_function():
         clicked_action(CYCLE_STOP_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(CYCLE_STOP_INACTIVE)
+
 
     def drv_function():
         if ui.drvButton.isChecked():
@@ -211,11 +221,13 @@ if __name__ == "__main__":
         else:
             clicked_action(DRV_INACTIVE)
 
+
     def z_lock_function():
         if ui.zLockButton.isChecked():
             clicked_action(Z_LOCK_ACTIVE)
         else:
             clicked_action(Z_LOCK_INACTIVE)
+
 
     def dry_run_function():
         if ui.dryRunButton.isChecked():
@@ -223,11 +235,13 @@ if __name__ == "__main__":
         else:
             clicked_action(DRY_RUN_INACTIVE)
 
+
     def jog_function():
         if ui.jogButton.isChecked():
             clicked_action(JOG_ACTIVE)
         else:
             clicked_action(JOG_INACTIVE)
+
 
     def mdi_function():
         if ui.mdiButton.isChecked():
@@ -235,11 +249,13 @@ if __name__ == "__main__":
         else:
             clicked_action(MDI_INACTIVE)
 
+
     def auto_function():
         if ui.autoButton.isChecked():
             clicked_action(AUTO_ACTIVE)
         else:
             clicked_action(AUTO_INACTIVE)
+
 
     def x_jog_function():
         if ui.xButton.isChecked():
@@ -247,11 +263,13 @@ if __name__ == "__main__":
         else:
             clicked_action(X_INACTIVE)
 
+
     def y_jog_function():
         if ui.yButton.isChecked():
             clicked_action(Y_ACTIVE)
         else:
             clicked_action(Y_INACTIVE)
+
 
     def z_jog_function():
         if ui.zButton.isChecked():
@@ -259,15 +277,18 @@ if __name__ == "__main__":
         else:
             clicked_action(Z_INACTIVE)
 
+
     def plus_jog_function():
         clicked_action(PLUS_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(PLUS_INACTIVE)
 
+
     def minus_jog_function():
         clicked_action(MINUS_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(MINUS_INACTIVE)
+
 
     def vvv_jog_function():
         if ui.vvvButton.isChecked():
@@ -275,11 +296,13 @@ if __name__ == "__main__":
         else:
             clicked_action(VVV_INACTIVE)
 
+
     def nc_ref_function():
         if ui.ncRefButton.isChecked():
             clicked_action(NC_REF_ACTIVE)
         else:
             clicked_action(NC_REF_INACTIVE)
+
 
     def nc_offset_function():
         if ui.ncOffsetButton.isChecked():
@@ -287,41 +310,55 @@ if __name__ == "__main__":
         else:
             clicked_action(NC_OFF_INACTIVE)
 
+
     def ret_for_function():
         clicked_action(RET_FOR_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(RET_FOR_INACTIVE)
+
 
     def ret_rev_function():
         clicked_action(RET_REV_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(RET_REV_INACTIVE)
 
+
     def prc_end_function():
         clicked_action(PRC_END_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(PRC_END_INACTIVE)
+
 
     def alm_ovr_function():
         clicked_action(ALM_OVR_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(ALM_OVR_INACTIVE)
 
+
     def alm_rst_function():
         clicked_action(ALM_RST_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(ALM_RST_INACTIVE)
+
 
     def lock_rst_function():
         clicked_action(LOCK_RST_ACTIVE)
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(LOCK_RST_INACTIVE)
 
+    def laser_status_check():
+        clicked_action(LASER_STATUS_CHECK)
+
+    laserTimer = QTimer()
+    laserTimer.timeout.connect(lambda: laser_status_check())
+
     def laser_on_function():
         if ui.laserOnButton.isChecked():
             clicked_action(LASER_ON_ACTIVE)
+            laserTimer.start(1000)
         else:
             clicked_action(LASER_ON_INACTIVE)
+            laserTimer.stop()
 
     ui.cycleStartButton.clicked.connect(lambda: cycle_start_function())
     ui.cycleStopButton.clicked.connect(lambda: cycle_stop_function())
@@ -346,6 +383,8 @@ if __name__ == "__main__":
     ui.almRstButton.clicked.connect(lambda: alm_rst_function())
     ui.lockRstButton.clicked.connect(lambda: lock_rst_function())
     ui.laserOnButton.clicked.connect(lambda: laser_on_function())
+
+
 
     MainWindow.show()
     sys.exit(app.exec_())
