@@ -47,8 +47,11 @@ def connect_ethercat3():
 
 
 def read_data():
-    data_in = ser.read(1)
-    return data_in
+    data_in = ser.readline()
+    if data_in == 'Y':
+        return True
+    else:
+        return False
 
 
 def write_data(data_out):

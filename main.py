@@ -346,19 +346,28 @@ if __name__ == "__main__":
         sleep(MOMENTARY_SWITCH_ON_TIME_SEC)
         clicked_action(LOCK_RST_INACTIVE)
 
+
     def laser_status_check():
         clicked_action(LASER_STATUS_CHECK)
+        received = communication.read_data()
+        if received:
+            ui.laserReadyLamp.setPixmap(QtGui.QPixmap("images/laserready_on.png"))
+        else:
+            ui.laserReadyLamp.setPixmap(QtGui.QPixmap("images/laserready_off.png"))
+
 
     laserTimer = QTimer()
     laserTimer.timeout.connect(lambda: laser_status_check())
 
+
     def laser_on_function():
         if ui.laserOnButton.isChecked():
             clicked_action(LASER_ON_ACTIVE)
-            laserTimer.start(1000)
+            laserTimer.start(2000)
         else:
             clicked_action(LASER_ON_INACTIVE)
             laserTimer.stop()
+
 
     ui.cycleStartButton.clicked.connect(lambda: cycle_start_function())
     ui.cycleStopButton.clicked.connect(lambda: cycle_stop_function())
@@ -383,8 +392,6 @@ if __name__ == "__main__":
     ui.almRstButton.clicked.connect(lambda: alm_rst_function())
     ui.lockRstButton.clicked.connect(lambda: lock_rst_function())
     ui.laserOnButton.clicked.connect(lambda: laser_on_function())
-
-
 
     MainWindow.show()
     sys.exit(app.exec_())
