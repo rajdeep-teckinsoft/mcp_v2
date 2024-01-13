@@ -19,6 +19,7 @@ def connect_ethercat0():
 def connect_ethercat1():
     ser.baudrate = 115200
     ser.port = '/dev/ttyACM1'
+    ser.timeout = 1
     try:
         ser.open()
         return True
